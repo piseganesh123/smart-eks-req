@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+  labels:
+    app: jsp-webapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jsp-webapp
+  template:
+    metadata:
+      labels:
+        app: jsp-webapp
+    spec:
+      containers:
+      - name: jsp-webapp
+        image: piseganesh123/java-demo-app:1.0.8
+        ports:
+        - containerPort: 8080
