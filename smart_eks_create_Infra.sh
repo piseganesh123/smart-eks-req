@@ -16,3 +16,7 @@ eksctl create cluster \
 --name smart-eks-farg-cluster \
 --region ap-south-1 \
 --fargate
+
+#script to get kubeconfig
+
+aws eks update-kubeconfig --name smart-eks-farg-cluster --region ap-south-1
