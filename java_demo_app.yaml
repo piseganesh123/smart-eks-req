@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapp-deployment
+  name: nginx-deployment
   labels:
-    app: jsp-webapp
+    app: nginx
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: jsp-webapp
+      app: nginx
   template:
     metadata:
       labels:
-        app: jsp-webapp
+        app: nginx
     spec:
       containers:
-      - name: jsp-webapp
+      - name: nginx
         image: piseganesh123/java-demo-app:1.0.8
         ports:
         - containerPort: 8080
